@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,75 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FaceRecognition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcL-f0-DtR">
+                                <rect key="frame" x="148" y="412" width="118" height="72"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ar5-Je-N0K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ces-Dy-T8n">
+                                <rect key="frame" x="162" y="505" width="91" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bcL-f0-DtR" firstAttribute="centerX" secondItem="ces-Dy-T8n" secondAttribute="centerX" id="0lB-hk-9o4"/>
+                            <constraint firstItem="bcL-f0-DtR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="368" id="33h-pF-QJs"/>
+                            <constraint firstItem="ces-Dy-T8n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="162" id="FPX-pu-j8k"/>
+                            <constraint firstItem="bcL-f0-DtR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HHm-tH-CDT"/>
+                            <constraint firstItem="bcL-f0-DtR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QaJ-rh-V4x"/>
+                            <constraint firstItem="ces-Dy-T8n" firstAttribute="top" secondItem="bcL-f0-DtR" secondAttribute="bottom" constant="21" id="YJY-8a-Kp1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ces-Dy-T8n" secondAttribute="bottom" constant="301" id="lzi-iB-WuZ"/>
+                            <constraint firstItem="bcL-f0-DtR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="148" id="vLs-00-6Px"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="myLabel" destination="ces-Dy-T8n" id="yAD-cV-MGM"/>
+                        <segue destination="TOK-lO-lgD" kind="show" identifier="toSecondVC" id="WrY-1i-OnS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ww9-iu-3vb">
+            <objects>
+                <viewController id="TOK-lO-lgD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6uu-Yl-ozY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Signed In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Ke-Jsz">
+                                <rect key="frame" x="163" y="419" width="89" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qE4-Ke-Jsz" firstAttribute="centerY" secondItem="6uu-Yl-ozY" secondAttribute="centerY" id="6hP-BN-zuu"/>
+                            <constraint firstItem="qE4-Ke-Jsz" firstAttribute="top" secondItem="6jT-we-ZXh" secondAttribute="top" constant="375" id="SkE-8Q-yCW"/>
+                            <constraint firstItem="qE4-Ke-Jsz" firstAttribute="leading" secondItem="6jT-we-ZXh" secondAttribute="leading" constant="163" id="ULv-Dt-Nae"/>
+                            <constraint firstItem="qE4-Ke-Jsz" firstAttribute="centerX" secondItem="6uu-Yl-ozY" secondAttribute="centerX" id="XYi-Oq-1SD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6jT-we-ZXh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyj-af-SMl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.86956521739137" y="112.5"/>
         </scene>
     </scenes>
 </document>
